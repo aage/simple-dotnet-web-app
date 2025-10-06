@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    parameters {
+        string(name: 'PARAMETER_1', defaultValue: 'default', description: 'A sample string parameter')
+    }
     options {
         skipStagesAfterUnstable()
     }
