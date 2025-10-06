@@ -33,5 +33,10 @@ pipeline {
                 }
             }
         }
+        stage('Summary') {
+            steps {
+                echo "PARAMETER_1 value: ${params.PARAMETER_1}"
+            }
+        }
     }
 }
