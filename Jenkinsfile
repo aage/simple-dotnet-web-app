@@ -34,8 +34,12 @@ pipeline {
             }
         }
         stage('Summary') {
+            environment {
+                SECRET_KEY = credentials('foo-creds')
+            }
             steps {
                 echo "PARAMETER_1 value: ${params.PARAMETER_1}"
+                echo "${SECRET_KEY}"
             }
         }
     }
